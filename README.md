@@ -4,6 +4,43 @@
 
 O microsserviço é responsável por gerenciar a autenticação e autorização de usuários, bem como a manipulação de produtos em um banco de dados MongoDB. Ele utiliza JSON Web Tokens (JWT) para autenticação e autorização de usuários. Os principais recursos oferecidos incluem o registro de novos usuários, login, extração de papéis de usuários e operações CRUD em produtos.
 
+# Diagrama de Fluxo do Microsserviço
+
+```mermaid
+graph TD;
+    A[Usuário] -->|Registra| B[POST /register]
+    B --> C[Serviço de Autenticação]
+    C -->|Cria Usuário| D[MongoDB]
+    
+    A -->|Login| E[POST /login]
+    E --> C
+    C -->|Gera Token| F[JWT Token]
+
+    subgraph "Operações Autenticadas"
+        G[JWT Token] -->|Acesso| H[GET /admin/users/{id}]
+        G -->|Acesso| I[DELETE /admin/users/{id}]
+        G -->|Acesso| J[DELETE /manager/products/{id}]
+        G -->|Acesso| K[POST /seller/products]
+        G -->|Acesso| L[GET /customer/products/{id}]
+        G -->|Acesso| M[GET /role/{token}]
+    end
+
+    H --> C
+    I --> C
+    J --> C
+    K --> C
+    L --> C
+    M --> C
+
+    C -->|Acesso| D
+    H -->|Exclui Usuário| D
+    I -->|Exclui Usuário| D
+    J -->|Exclui Produto| D
+    K -->|Cria Produto| D
+    L -->|Visualiza Produto| D
+    M -->|Extrai Papel| D
+```
+
 ## Informações de Contato
 
 - **Nome:** Gustavo Rodrigues
