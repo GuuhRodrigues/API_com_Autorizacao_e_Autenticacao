@@ -7,7 +7,6 @@ O microsserviço é responsável por gerenciar a autenticação e autorização 
 # Diagrama de Fluxo do Microsserviço
 
 # Diagrama de Fluxo do Microsserviço
-
 ```mermaid
 graph TD;
     A[Usuário] -->|Registra| B[POST /register]
@@ -18,7 +17,7 @@ graph TD;
     E --> C
     C -->|Gera Token| F[JWT Token]
 
-    subgraph "Operações Autenticadas"
+    subgraph Operações_Autenticadas
         G[JWT Token] -->|Acesso| H[GET /admin/users/{id}]
         G -->|Acesso| I[DELETE /admin/users/{id}]
         G -->|Acesso| J[DELETE /manager/products/{id}]
