@@ -7,37 +7,38 @@ O microsserviço é responsável por gerenciar a autenticação e autorização 
 # Diagrama de Fluxo do Microsserviço
 ```mermaid
 graph TD;
-    A[Usuário] -->|Registra| B[POST /register]
-    B --> C[Serviço de Autenticação]
-    C -->|Cria Usuário| D[MongoDB]
-    
-    A -->|Login| E[POST /login]
-    E --> C
-    C -->|Gera Token| F[JWT Token]
-
-    subgraph Operações_Autenticadas
-        G[JWT Token] -->|Acesso| H[GET /admin/users/{id}]
-        G -->|Acesso| I[DELETE /admin/users/{id}]
-        G -->|Acesso| J[DELETE /manager/products/{id}]
-        G -->|Acesso| K[POST /seller/products]
-        G -->|Acesso| L[GET /customer/products/{id}]
-        G -->|Acesso| M[GET /role/{token}]
+    subgraph User_Operations
+        A1[Registra Usuário] --> B1[Autentica Usuário]
+        B1 --> C1[Extrai Papel de Usuário]
     end
 
-    H --> C
-    I --> C
-    J --> C
-    K --> C
-    L --> C
-    M --> C
+    subgraph Admin_Operations
+        D1[Exclui Usuário]
+    end
 
-    C -->|Acesso| D
-    H -->|Exclui Usuário| D
-    I -->|Exclui Usuário| D
-    J -->|Exclui Produto| D
-    K -->|Cria Produto| D
-    L -->|Visualiza Produto| D
-    M -->|Extrai Papel| D
+    subgraph Manager_Operations
+        E1[Exclui Produto]
+    end
+
+    subgraph Seller_Operations
+        F1[Cria Produto]
+    end
+
+    subgraph Customer_Operations
+        G1[Visualiza Produto]
+    end
+
+    A[API de Autenticação] -->|Registra/Login| User_Operations
+    User_Operations -->|Token JWT| H[JWT Service]
+    H -->|Autorização| Admin_Operations
+    H -->|Autorização| Manager_Operations
+    H -->|Autorização| Seller_Operations
+    H -->|Autorização| Customer_Operations
+    User_Operations -->|Acesso a Dados| I[MongoDB]
+    Admin_Operations -->|Acesso a Dados| I
+    Manager_Operations -->|Acesso a Dados| I
+    Seller_Operations -->|Acesso a Dados| I
+    Customer_Operations -->|Acesso a Dados| I
 ```
 
 ## Informações de Contato
