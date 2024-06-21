@@ -6,39 +6,41 @@ O microsserviço é responsável por gerenciar a autenticação e autorização 
 
 # Diagrama de Fluxo do Microsserviço
 
+# Diagrama de Fluxo do Microsserviço
+
 ```mermaid
-    graph TD;
-        A[Usuário] -->|Registra| B[POST /register]
-        B --> C[Serviço de Autenticação]
-        C -->|Cria Usuário| D[MongoDB]
-        
-        A -->|Login| E[POST /login]
-        E --> C
-        C -->|Gera Token| F[JWT Token]
+graph TD;
+    A[Usuário] -->|Registra| B[POST /register]
+    B --> C[Serviço de Autenticação]
+    C -->|Cria Usuário| D[MongoDB]
     
-        subgraph "Operações Autenticadas"
-            G[JWT Token] -->|Acesso| H[GET /admin/users/{id}]
-            G -->|Acesso| I[DELETE /admin/users/{id}]
-            G -->|Acesso| J[DELETE /manager/products/{id}]
-            G -->|Acesso| K[POST /seller/products]
-            G -->|Acesso| L[GET /customer/products/{id}]
-            G -->|Acesso| M[GET /role/{token}]
-        end
-    
-        H --> C
-        I --> C
-        J --> C
-        K --> C
-        L --> C
-        M --> C
-    
-        C -->|Acesso| D
-        H -->|Exclui Usuário| D
-        I -->|Exclui Usuário| D
-        J -->|Exclui Produto| D
-        K -->|Cria Produto| D
-        L -->|Visualiza Produto| D
-        M -->|Extrai Papel| D
+    A -->|Login| E[POST /login]
+    E --> C
+    C -->|Gera Token| F[JWT Token]
+
+    subgraph "Operações Autenticadas"
+        G[JWT Token] -->|Acesso| H[GET /admin/users/{id}]
+        G -->|Acesso| I[DELETE /admin/users/{id}]
+        G -->|Acesso| J[DELETE /manager/products/{id}]
+        G -->|Acesso| K[POST /seller/products]
+        G -->|Acesso| L[GET /customer/products/{id}]
+        G -->|Acesso| M[GET /role/{token}]
+    end
+
+    H --> C
+    I --> C
+    J --> C
+    K --> C
+    L --> C
+    M --> C
+
+    C -->|Acesso| D
+    H -->|Exclui Usuário| D
+    I -->|Exclui Usuário| D
+    J -->|Exclui Produto| D
+    K -->|Cria Produto| D
+    L -->|Visualiza Produto| D
+    M -->|Extrai Papel| D
 ```
 
 ## Informações de Contato
