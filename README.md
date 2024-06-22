@@ -10,41 +10,41 @@ graph TD;
     subgraph User_Operations
         A1[Registra Usuário] --> B1[Autentica Usuário]
         B1 --> C1[Extrai Papel de Usuário]
-        style A1 fill:#e74c3c,stroke:#333,stroke-width:2px;
-        style B1 fill:#2ecc71,stroke:#333,stroke-width:2px;
-        style C1 fill:#f1c40f,stroke:#333,stroke-width:2px;
+        style A1 fill:#e74c3c,stroke:#333,stroke-width:2px,color:#fff;
+        style B1 fill:#2ecc71,stroke:#333,stroke-width:2px,color:#fff;
+        style C1 fill:#f1c40f,stroke:#333,stroke-width:2px,color:#fff;
     end
 
     subgraph Admin_Operations
         D1[Exclui Usuário]
-        style D1 fill:#e67e22,stroke:#333,stroke-width:2px;
+        style D1 fill:#e67e22,stroke:#333,stroke-width:2px,color:#fff;
     end
 
     subgraph Manager_Operations
         E1[Exclui Produto]
-        style E1 fill:#3498db,stroke:#333,stroke-width:2px;
+        style E1 fill:#3498db,stroke:#333,stroke-width:2px,color:#fff;
     end
 
     subgraph Seller_Operations
         F1[Cria Produto]
-        style F1 fill:#9b59b6,stroke:#333,stroke-width:2px;
+        style F1 fill:#9b59b6,stroke:#333,stroke-width:2px,color:#fff;
     end
 
     subgraph Customer_Operations
         G1[Visualiza Produto]
-        style G1 fill:#2ecc71,stroke:#333,stroke-width:2px;
+        style G1 fill:#2ecc71,stroke:#333,stroke-width:2px,color:#fff;
     end
 
     A[API de Autenticação] -->|Registra/Login| User_Operations
-    style A fill:#f39c12,stroke:#333,stroke-width:2px;
+    style A fill:#f39c12,stroke:#333,stroke-width:2px,color:#fff;
     User_Operations -->|Token JWT| H[JWT Service]
-    style H fill:#3498db,stroke:#333,stroke-width:2px;
+    style H fill:#3498db,stroke:#333,stroke-width:2px,color:#fff;
     H -->|Autorização| Admin_Operations
     H -->|Autorização| Manager_Operations
     H -->|Autorização| Seller_Operations
     H -->|Autorização| Customer_Operations
     User_Operations -->|Acesso a Dados| I[MongoDB]
-    style I fill:#e74c3c,stroke:#333,stroke-width:2px;
+    style I fill:#e74c3c,stroke:#333,stroke-width:2px,color:#fff;
     Admin_Operations -->|Acesso a Dados| I
     Manager_Operations -->|Acesso a Dados| I
     Seller_Operations -->|Acesso a Dados| I
