@@ -1,4 +1,4 @@
-![image](https://github.com/GuuhRodrigues/Av2ArquiteturaAppWeb/assets/102631537/11076301-1e40-4c83-8566-c3066606c7f0)# Documentação da API com autorização e autenticação para um sistema de e-commerce
+# Documentação da API com autorização e autenticação para um sistema de e-commerce
 
 ## Descrição do Microsserviço
 
