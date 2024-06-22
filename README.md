@@ -253,7 +253,7 @@ Resposta:
 
 Extrair Papel
 
-![Register](https://github.com/GuuhRodrigues/Av2ArquiteturaAppWeb/blob/master/img/Register.PNG)
+![Extrair Role](https://github.com/GuuhRodrigues/Av2ArquiteturaAppWeb/blob/master/img/ExtractRole.PNG)
 
 URL: /role/{token}
 
