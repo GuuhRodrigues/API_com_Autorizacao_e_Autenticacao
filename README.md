@@ -114,7 +114,7 @@ Informações sobre o(s) Fluxo(s) de Solicitação
 Endpoints
 Registro de Usuário
 
-<img src="[https://github.com/GuuhRodrigues/GuuhRodrigues/blob/main/img/fundo.png](https://github.com/GuuhRodrigues/Av2ArquiteturaAppWeb/blob/master/img/Register.PNG)"/>
+![Register](https://github.com/GuuhRodrigues/Av2ArquiteturaAppWeb/blob/master/img/Register.PNG)
 
 URL: /register
 
