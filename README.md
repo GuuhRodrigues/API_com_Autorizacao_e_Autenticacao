@@ -231,7 +231,9 @@ Resposta:
 }
 ```
 
-Visualizar Produto
+## Visualizar Produto
+
+![Visualizar](https://github.com/GuuhRodrigues/Av2ArquiteturaAppWeb/blob/master/img/VisualizeProduct.PNG)
 
 URL: /customer/products/{id}
 
@@ -250,6 +252,8 @@ Resposta:
 ```
 
 Extrair Papel
+
+![Register](https://github.com/GuuhRodrigues/Av2ArquiteturaAppWeb/blob/master/img/Register.PNG)
 
 URL: /role/{token}
 
