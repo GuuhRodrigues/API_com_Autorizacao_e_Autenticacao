@@ -81,6 +81,7 @@ public class AuthController {
         return ResponseEntity.status(404).body(null);
     }
 
+    @Secured("USER")
     @GetMapping("/role/{token}")
     public ResponseEntity<String> extractRole(@PathVariable String token) {
         String role = authService.extractRole(token);
