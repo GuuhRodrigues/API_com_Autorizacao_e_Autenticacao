@@ -202,7 +202,9 @@ Resposta:
 }
 ```
 
-Criar Produto
+## Criar Produto
+
+![CreateProduct](https://github.com/GuuhRodrigues/Av2ArquiteturaAppWeb/blob/master/img/CreateProduct.PNG)
 
 URL: /seller/products
 
