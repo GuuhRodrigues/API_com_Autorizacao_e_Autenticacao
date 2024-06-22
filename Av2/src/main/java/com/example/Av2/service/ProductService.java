@@ -1,26 +1,32 @@
 package com.example.Av2.service;
 
 import com.example.Av2.model.Product;
+import com.example.Av2.repository.ProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Optional;
 
 @Service
 public class ProductService {
 
-    private Map<String, Product> productRepository = new HashMap<>();
+    @Autowired
+    private ProductRepository productRepository;
 
     public Product findProductById(String id) {
-        return productRepository.get(id);
+        Optional<Product> product = productRepository.findById(id);
+        return product.orElse(null);
     }
 
     public boolean deleteProductById(String id) {
-        return productRepository.remove(id) != null;
+        if (productRepository.existsById(id)) {
+            productRepository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 
     public Product createProduct(Product product) {
-        productRepository.put(product.getId(), product);
-        return product;
+        return productRepository.save(product);
     }
 }

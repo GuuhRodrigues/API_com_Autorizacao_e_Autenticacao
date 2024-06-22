@@ -29,7 +29,7 @@ public class AppConfig {
                         .requestMatchers(HttpMethod.POST, "/login").permitAll()
                         .requestMatchers(HttpMethod.GET, "/admin/users").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/manager/products").hasRole("MANAGER")
-                        .requestMatchers(HttpMethod.GET, "/seller/orders").hasRole("SELLER")
+                        .requestMatchers(HttpMethod.POST, "/seller/orders").hasRole("SELLER")
                         .requestMatchers(HttpMethod.GET, "/customer/products").hasRole("COSTUMER")
                         .anyRequest().authenticated()
                 )

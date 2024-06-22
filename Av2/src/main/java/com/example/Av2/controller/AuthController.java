@@ -65,8 +65,8 @@ public class AuthController {
     }
 
     @Secured("SELLER")
-    @GetMapping("/seller/orders")
-    public ResponseEntity<String> createProduct(@PathVariable Product product) {
+    @PostMapping("/seller/orders")
+    public ResponseEntity<String> createProduct(@RequestBody Product product) {
         Product createdProduct = productService.createProduct(product);
         return ResponseEntity.ok("Produto criado com sucesso");
     }
