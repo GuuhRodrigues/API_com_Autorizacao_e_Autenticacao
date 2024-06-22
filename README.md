@@ -186,7 +186,9 @@ Resposta:
 }
 ```
 
-Excluir Produto
+## Excluir Produto
+
+![DeleteProduct](https://github.com/GuuhRodrigues/Av2ArquiteturaAppWeb/blob/master/img/DeleteProduct.PNG)
 
 URL: /manager/products/{id}
 
