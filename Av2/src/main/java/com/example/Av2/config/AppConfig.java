@@ -30,7 +30,7 @@ public class AppConfig {
                         .requestMatchers(HttpMethod.GET, "/admin/users").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/manager/products").hasRole("MANAGER")
                         .requestMatchers(HttpMethod.POST, "/seller/orders").hasRole("SELLER")
-                        .requestMatchers(HttpMethod.DELETE, "/customer/products").hasRole("COSTUMER")
+                        .requestMatchers(HttpMethod.GET, "/customer/products").hasRole("COSTUMER")
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
