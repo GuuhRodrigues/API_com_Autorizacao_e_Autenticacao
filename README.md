@@ -1,4 +1,4 @@
-# Documentação da API com autorização e autenticação para um sistema de e-commerce
+# Documentação da API com Autorização e Autenticação para um Sistema de E-commerce
 
 ## Descrição do Microsserviço
 
