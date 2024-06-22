@@ -112,7 +112,8 @@ jwt.secret=secret_key
 ```
 Informações sobre o(s) Fluxo(s) de Solicitação
 Endpoints
-Registro de Usuário
+
+## Registro de Usuário
 
 ![Register](https://github.com/GuuhRodrigues/Av2ArquiteturaAppWeb/blob/master/img/Register.PNG)
 
