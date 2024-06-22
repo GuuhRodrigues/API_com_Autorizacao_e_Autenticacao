@@ -72,7 +72,7 @@ public class AuthController {
     }
 
     @Secured("COSTUMER")
-    @GetMapping("/customer/products/{id}")
+    @DeleteMapping("/customer/products/{id}")
     public ResponseEntity<Product> visualizeProduct(@PathVariable String id) {
         Product product = productService.findProductById(id);
         if (product != null) {
