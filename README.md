@@ -168,7 +168,9 @@ Resposta:
 }
 ```
 
-Excluir Usuário
+## Excluir Usuário
+
+![DeleteUser](https://github.com/GuuhRodrigues/Av2ArquiteturaAppWeb/blob/master/img/DeleteUser.PNG)
 
 URL: /admin/users/{id}
 
