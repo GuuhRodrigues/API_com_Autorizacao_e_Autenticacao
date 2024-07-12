@@ -66,7 +66,6 @@ graph TD;
 ## Links para Informações Importantes
 
 - [Repositório GitHub]([https://github.com/username/repository](https://github.com/GuuhRodrigues/Av2ArquiteturaAppWeb))
-- [Documentação da API](https://docs.api.com)
 - [Ferramentas de Monitoramento] - Quando tiver irei adicionar
 - [Ferramentas de Log] - Quando tiver irei adicionar
 
